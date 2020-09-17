@@ -1,7 +1,7 @@
 # Starter pipeline
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+# .github/workflows/azure.yml
 
 trigger:
 - master
@@ -17,3 +17,11 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+- task: TerraformTaskV1@0
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    backendServiceArm: 'Free Trial (e234a7e4-58d4-46f2-83a0-058b8de16877)'
+    backendAzureRmResourceGroupName: 'dev'
+    backendAzureRmStorageAccountName: 'devlauren'
+    backendAzureRmContainerName: 'devlauren'
