@@ -25,3 +25,4 @@ steps:
     backendAzureRmResourceGroupName: 'dev'
     backendAzureRmStorageAccountName: 'devlauren'
     backendAzureRmContainerName: 'devlauren'
+    backendAzureRmKey: 'tf/terraform.tfstate'
